@@ -1,16 +1,8 @@
 export const properties = {
-    backendUrl: 'https://surveyor-be.vercel.app/',
+    API_KEY: 'HjpCL0prq1dIjovfHaIl8zsqQtRuE7YGqXL5nEGF',
     urls: {
-        user : {
-            register: 'https://surveyor-be.vercel.app/user/register',
-            login: 'https://surveyor-be.vercel.app/user/login',
-        },
-        survey : {
-            createSurvey: 'https://surveyor-be.vercel.app/survey/createSurvey',
-            getAllSurveys: 'https://surveyor-be.vercel.app/survey/fetchMySurveys',
-            getOneSurvey: 'https://surveyor-be.vercel.app/survey/getSurvey',
-            getAllResponse: 'https://surveyor-be.vercel.app/response/fetchResponses',
-            posttResponse: 'https://surveyor-be.vercel.app/response/addResponse',
-        }
+        browse: 'https://api.nasa.gov/neo/rest/v1/neo/browse',
+        feed: 'https://api.nasa.gov/neo/rest/v1/feed',
+        lookup: 'https://api.nasa.gov/neo/rest/v1/neo/'
     }
 }
