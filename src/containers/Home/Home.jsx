@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { browse } from '../../services/info.service';
-import Asteroids from '../Asteroids/Asteroids';
+import AsteroidList from '../Asteroids/AsteroidList';
 import './home.css';
 
 
@@ -19,7 +19,7 @@ function Home() {
         <div>
             <div className="container">
                 {
-                    !showAsteroids ? (<div>Loading...</div>) : (<Asteroids asteroidsList = {asteroidList}/>)
+                    !showAsteroids ? (<div>Loading...</div>) : (<AsteroidList asteroidList = {asteroidList}/>)
                 }
             </div>
         </div>
