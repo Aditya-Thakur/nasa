@@ -1,12 +1,10 @@
-import { TextField } from '@material-ui/core'
 import React from 'react'
-import { useState } from 'react'
 import { feed } from '../../services/info.service'
 import './DatePicker.css'
-export default function DatePicker() {
+export default function DatePicker({toAsteroidView}) {
     let dateRange = {
-        startDate: new Date().toDateString,
-        endDate: new Date().toDateString
+        startDate: null,
+        endDate: null
     }
 
     return (
@@ -16,9 +14,6 @@ export default function DatePicker() {
             </div>
             <div className="card-body">
                 <p>Start Date:</p>
-                {/* <TextField value={dateRange.startDate} id='startDate' label="Start Date" type="date" onChange={ event => {
-                    dateRange.startDate = event.target.value
-                }}  /> */}
                 <input type="date" name="Start_Date" id="" onChange={ event => {
                     dateRange.startDate = event.target.value
                 }}  />
@@ -29,7 +24,12 @@ export default function DatePicker() {
                 <button onClick={
                     event => {
                         event.preventDefault();
-                        feed(dateRange)
+                        feed(dateRange).then(
+                            res => toAsteroidView(res.near_earth_objects)
+                        ).catch( err => {
+                            console.log(err);
+                        })
+                        
                     }
                     }>Search</button>
             </div>
