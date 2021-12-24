@@ -1,6 +1,6 @@
 import React from 'react';
 import './Asteroid.css';
-import AsteroidImage from '../../assets/images/asteroid.gif'
+import AsteroidImage from '../../assets/images/asteroid.gif';
 export default function Asteroid(props) {
     const ast = props.asteroidData;
     return (
@@ -9,7 +9,9 @@ export default function Asteroid(props) {
                     <h1>{ast.name_limited}</h1>
                     <p>{ast.name}</p>
                 </div>
-                <img src={AsteroidImage} alt="Asteroid" height="100px" width="auto" />
+                <img src={AsteroidImage} alt="Asteroid" height="100px" width="auto" title='Know more' onClick={() => {
+                    props.showDetails(ast.id);
+                }} />
                 <div className="bottom">
                     <div className="data-left">
                         <div className="data">Magnitude: {ast.absolute_magnitude_h}</div>

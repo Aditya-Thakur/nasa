@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { browse } from '../../services/info.service';
+import AsteroidDetails from '../Asteroids/AsteroidDetails';
 import AsteroidList from '../Asteroids/AsteroidList';
 import AsteroidRange from '../Asteroids/AsteroidRange';
 import DatePicker from '../DatePicker/DatePicker';
@@ -10,7 +11,9 @@ function Home() {
     const [showAsteroids, setShowAsteroids] = useState(false);
     const [showAsteroidRange, setshowAsteroidRange] = useState(false)
     const [asteroidList, setAsteroidList] = useState([]);
-    const [asteroidRange, setasteroidRange] = useState({})
+    const [asteroidRange, setasteroidRange] = useState({});
+    const [showDetailsPane, setshowDetailsPane] = useState(false);
+    const [astId, setastId] = useState(0)
     useEffect(() => {
         browse().then(res => {
             setAsteroidList(res.near_earth_objects.slice(0,9));
@@ -21,10 +24,14 @@ function Home() {
     }, []);
 
     const toAsteroidView = (astList) => {
-        console.log('check');
-        console.log(astList);
         setasteroidRange(astList);
         setshowAsteroidRange(true);
+    }
+
+    const showDetails = (id) => {
+        console.log(id);
+        setastId(id);
+        setshowDetailsPane(true);
     }
     return (
         <div className="container">
@@ -34,13 +41,16 @@ function Home() {
             <div className="center">
                 {
                     !showAsteroids ? (<div>Loading...</div>) : (
-                        showAsteroidRange ? <AsteroidRange asteroidRange={asteroidRange} /> :
-                    <AsteroidList asteroidList={asteroidList} />
+                        showAsteroidRange ? <AsteroidRange asteroidRange={asteroidRange} showDetails={showDetails} /> :
+                    <AsteroidList asteroidList={asteroidList} showDetails={showDetails} />
                     )
                 }
             </div>
             <div className="right">
                <DatePicker toAsteroidView = {toAsteroidView} />
+               {
+                   showDetailsPane ? (<AsteroidDetails astId={astId} />) : (<></>)
+               }
             </div>
         </div>
     )

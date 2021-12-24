@@ -30,7 +30,7 @@ export default function AsteroidRange(props) {
                   }
               }}> ▶️ </div>
           </div>
-          <AsteroidList asteroidList = {asteroidData[current].list}/>
+          <AsteroidList asteroidList = {asteroidData[current].list} showDetails={props.showDetails} />
         </div>
     )
 }

@@ -37,6 +37,10 @@
     display: block;
 }
 
+.glass img {
+    cursor: pointer;
+}
+
 .grid-container {
     display: grid;
     grid: 300px / auto auto auto;
