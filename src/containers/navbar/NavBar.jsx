@@ -2,12 +2,14 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import './NavBar.css';
 
-const NavBar = (props) => {
+const NavBar = () => {
     return (
         <nav className="navbar">
             <div className="logo">Neo-Ws</div>
             <div className="nav-buttons">
-                <ul className="navbar-nav">{props.children}</ul>
+                <ul className="navbar-nav">
+                   
+                </ul>
             </div>
         </nav>
     )

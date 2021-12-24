@@ -7,11 +7,11 @@ body {
 }
 
 :root {
-  --bg:  #005a5e;
+  --bg:  #000000;
   --bg-accent: #051b01;
   --text-color: #ebebeb;
   --nav-size: 60px;
-  --border: 1px solid #53B8BB;
+  --border: 1px solid #000000;
   --border-radius: 8px;
   --speed: 500ms; 
 }

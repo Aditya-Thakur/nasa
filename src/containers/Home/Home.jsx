@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { browse } from '../../services/info.service';
 import AsteroidList from '../Asteroids/AsteroidList';
+import DatePicker from '../DatePicker/DatePicker';
 import './home.css';
 
 
@@ -14,13 +15,19 @@ function Home() {
         }).catch(err => {
             console.log(err);
         })
-      }, []);
+    }, []);
     return (
-        <div>
-            <div className="container">
+        <div className="container">
+            <div className="left">
+                <h4>Asteroids are fun</h4>
+            </div>
+            <div className="center">
                 {
-                    !showAsteroids ? (<div>Loading...</div>) : (<AsteroidList asteroidList = {asteroidList}/>)
+                    !showAsteroids ? (<div>Loading...</div>) : (<AsteroidList asteroidList={asteroidList} />)
                 }
+            </div>
+            <div className="right">
+               <DatePicker />
             </div>
         </div>
     )

@@ -1,0 +1,21 @@
+.card {
+    /* border-top: 1px dotted rgba(255, 255, 255, 0.541);
+    border-bottom: 1px dotted rgba(255, 255, 255, 0.541);
+    border-left: 1px dotted rgba(255, 255, 255, 0.541); */
+    padding: 20px;
+    height: 25vh;
+}
+
+.card .card-title, .right .card .card-body {
+    font-size: large;
+    text-align: center;
+    padding: 10px 8px;
+}
+
+.card .card-body input {
+    margin: 10px;
+}
+
+::-webkit-datetime-edit { padding: 10px;}
+::-webkit-datetime-edit-fields-wrapper { color: var(--bg); }
+::-webkit-datetime-edit-text { padding: 0 0.3em; }

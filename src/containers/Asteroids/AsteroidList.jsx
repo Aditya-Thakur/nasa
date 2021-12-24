@@ -4,9 +4,9 @@ import './Asteroid.css';
 
 export default function AsteroidList(props) {
     return (
-        <div className="marquee">
+        <div className="grid-container">
                 {props.asteroidList.map(element => {
-                    return <Asteroid key={element.id} className="asteroid" asteroidData={element} />
+                    return <Asteroid key={element.id} asteroidData={element} />
                 })}
         </div>
     )
