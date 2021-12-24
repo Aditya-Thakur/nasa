@@ -19,12 +19,12 @@ export default function DatePicker() {
                 {/* <TextField value={dateRange.startDate} id='startDate' label="Start Date" type="date" onChange={ event => {
                     dateRange.startDate = event.target.value
                 }}  /> */}
-                <input type="date" name="Start_Date" id="" value={dateRange.startDate} onChange={ event => {
+                <input type="date" name="Start_Date" id="" onChange={ event => {
                     dateRange.startDate = event.target.value
                 }}  />
                 <p>End Date:</p>
-                <input type="date" name="End_Date" id="" value={dateRange.endDate} onChange={ event => {
-                    dateRange.startDate = event.target.value
+                <input type="date" name="End_Date" id="" onChange={ event => {
+                    dateRange.endDate = event.target.value
                 }}  />
                 <button onClick={
                     event => {
