@@ -43,24 +43,23 @@ function Home() {
                 {
                     !showAsteroids ? (<div>Loading...</div>) : (
                         <>
-                        {showAsteroidRange ? (<div onClick={() => {
-                            setshowAsteroidRange(false);
-                        }} className='closeRow'>
-                       <CloseButton />
-                    </div>) : (<></>) }
-                        {showAsteroidRange ? <AsteroidRange asteroidRange={asteroidRange} showDetails={showDetails} /> :
-                            <AsteroidList asteroidList={asteroidList} showDetails={showDetails} />}
+                            {showAsteroidRange ? (<div onClick={() => {
+                                setshowAsteroidRange(false);
+                            }} className='closeRow'>
+                                <CloseButton />
+                            </div>) : (<></>)}
+                            {showAsteroidRange ? <AsteroidRange asteroidRange={asteroidRange} showDetails={showDetails} /> :
+                                <AsteroidList asteroidList={asteroidList} showDetails={showDetails} />}
                         </>
-                        
+
                     )
                 }
             </div>
             <div className="right">
-                {
-                    showDetailsPane ? (<div onClick={() => {
+                {showDetailsPane ? (<div onClick={() => {
                         setshowDetailsPane(false);
                     }} className='closeRow'>
-                       <CloseButton />
+                        <CloseButton />
                     </div>) : (<></>)
                 }
                 {

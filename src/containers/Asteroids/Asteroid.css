@@ -39,6 +39,11 @@
     cursor: pointer;
 }
 
+.asterCard .bottom .data {
+    font-weight: bold;
+    color: aqua;
+}
+
 .grid-container {
     display: grid;
     grid: 300px / auto auto auto;
