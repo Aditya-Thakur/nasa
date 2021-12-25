@@ -19,7 +19,7 @@ function Home() {
     useEffect(() => {
         setShowAsteroids(false);
         browse().then(res => {
-            setAsteroidList(res.near_earth_objects.slice(0, 9));
+            setAsteroidList(res.near_earth_objects.slice(0, 10));
             setShowAsteroids(true);
         }).catch(err => {
             console.log(err);

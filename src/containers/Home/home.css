@@ -5,6 +5,22 @@
     flex-wrap: nowrap;
 }
 
+
+/* ================================= 
+Media Queries
+==================================== */
+
+@media (max-width: 769px) {
+  .container {
+    flex-wrap: wrap;
+}
+
+}
+
+/* ================================= 
+Media Queries End
+==================================== */
+
 .left {
     width: 15%;
     height: 90vh;
