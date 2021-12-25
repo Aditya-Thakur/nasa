@@ -2,6 +2,7 @@
     display: flex;
     place-content: center;
     color: var(--text-color);
+    flex-wrap: nowrap;
 }
 
 .left {
@@ -11,11 +12,24 @@
     justify-content: center;
     align-content: center;
     flex-direction: column;
-    background-image: url(./../../assets/images/earth.jpg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+    transform: translateX(-430px);
 }
+
+.left img {
+    width: 850px;
+    height: auto;
+    animation: rotation 10s infinite linear;
+}
+
+@keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(359deg);
+    }
+  }
+  
 
 .center {
     display: block;

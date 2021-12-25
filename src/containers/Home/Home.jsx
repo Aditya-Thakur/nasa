@@ -6,7 +6,7 @@ import AsteroidRange from '../Asteroids/AsteroidRange';
 import DatePicker from '../DatePicker/DatePicker';
 import CloseButton from '../shared/Buttons/CloseButton';
 import './home.css';
-
+import earthImage from '../../assets/images/earth.png';
 
 function Home() {
     const [showAsteroids, setShowAsteroids] = useState(false);
@@ -16,13 +16,14 @@ function Home() {
     const [showDetailsPane, setshowDetailsPane] = useState(false);
     const [astId, setastId] = useState(0)
     useEffect(() => {
+        setShowAsteroids(false);
         browse().then(res => {
             setAsteroidList(res.near_earth_objects.slice(0, 9));
             setShowAsteroids(true);
         }).catch(err => {
             console.log(err);
         })
-    }, []);
+    }, [showAsteroidRange]);
 
     const toAsteroidView = (astList) => {
         setasteroidRange(astList);
@@ -37,7 +38,7 @@ function Home() {
     return (
         <div className="container">
             <div className="left">
-                {/* This element holds the earth image */}
+                <img src={earthImage} alt="" />
             </div>
             <div className="center">
                 {
