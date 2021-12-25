@@ -4,7 +4,7 @@ import AsteroidImage from '../../assets/images/asteroid.gif';
 export default function Asteroid(props) {
     const ast = props.asteroidData;
     return (
-        <div className="glass">
+        <div className="asterCard">
             <div className="top">
                 <h1>{ast.name_limited}</h1>
                 <p>{ast.name}</p>
