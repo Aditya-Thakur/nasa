@@ -4,6 +4,7 @@ import AsteroidDetails from '../Asteroids/AsteroidDetails';
 import AsteroidList from '../Asteroids/AsteroidList';
 import AsteroidRange from '../Asteroids/AsteroidRange';
 import DatePicker from '../DatePicker/DatePicker';
+import CloseButton from '../shared/Buttons/CloseButton';
 import './home.css';
 
 
@@ -41,12 +42,27 @@ function Home() {
             <div className="center">
                 {
                     !showAsteroids ? (<div>Loading...</div>) : (
-                        showAsteroidRange ? <AsteroidRange asteroidRange={asteroidRange} showDetails={showDetails} /> :
-                            <AsteroidList asteroidList={asteroidList} showDetails={showDetails} />
+                        <>
+                        {showAsteroidRange ? (<div onClick={() => {
+                            setshowAsteroidRange(false);
+                        }} className='closeRow'>
+                       <CloseButton />
+                    </div>) : (<></>) }
+                        {showAsteroidRange ? <AsteroidRange asteroidRange={asteroidRange} showDetails={showDetails} /> :
+                            <AsteroidList asteroidList={asteroidList} showDetails={showDetails} />}
+                        </>
+                        
                     )
                 }
             </div>
             <div className="right">
+                {
+                    showDetailsPane ? (<div onClick={() => {
+                        setshowDetailsPane(false);
+                    }} className='closeRow'>
+                       <CloseButton />
+                    </div>) : (<></>)
+                }
                 {
                     showDetailsPane ? (<AsteroidDetails astId={astId} />) : (<></>)
                 }

@@ -32,3 +32,8 @@
     flex-direction: column;
 
 }
+
+.closeRow {
+    display: flex;
+   justify-content: end;
+}

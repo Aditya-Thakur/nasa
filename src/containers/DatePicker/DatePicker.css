@@ -10,6 +10,9 @@
     font-size: large;
     text-align: center;
     padding: 10px 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .card .card-body p {
