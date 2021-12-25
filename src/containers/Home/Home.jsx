@@ -27,7 +27,6 @@ function Home() {
     }, [showAsteroidRange]);
 
     const dateRetriever = (dateRange) => {
-        setshowAsteroidRange(false);
         setShowAsteroids(false);
         feed(dateRange).then(
             res => {

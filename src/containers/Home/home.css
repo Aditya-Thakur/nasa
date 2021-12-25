@@ -18,7 +18,7 @@
 .left img {
     width: 850px;
     height: auto;
-    animation: rotation 10s infinite linear;
+    animation: rotation 60s infinite linear;
 }
 
 @keyframes rotation {
