@@ -16,7 +16,7 @@ function Home() {
     const [astId, setastId] = useState(0)
     useEffect(() => {
         browse().then(res => {
-            setAsteroidList(res.near_earth_objects.slice(0,9));
+            setAsteroidList(res.near_earth_objects.slice(0, 9));
             setShowAsteroids(true);
         }).catch(err => {
             console.log(err);
@@ -42,15 +42,16 @@ function Home() {
                 {
                     !showAsteroids ? (<div>Loading...</div>) : (
                         showAsteroidRange ? <AsteroidRange asteroidRange={asteroidRange} showDetails={showDetails} /> :
-                    <AsteroidList asteroidList={asteroidList} showDetails={showDetails} />
+                            <AsteroidList asteroidList={asteroidList} showDetails={showDetails} />
                     )
                 }
             </div>
             <div className="right">
-               <DatePicker toAsteroidView = {toAsteroidView} />
-               {
-                   showDetailsPane ? (<AsteroidDetails astId={astId} />) : (<></>)
-               }
+                {
+                    showDetailsPane ? (<AsteroidDetails astId={astId} />) : (<></>)
+                }
+                <DatePicker toAsteroidView={toAsteroidView} />
+
             </div>
         </div>
     )

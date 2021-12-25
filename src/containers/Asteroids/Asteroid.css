@@ -56,3 +56,21 @@
 .header .left-arrow, .header .right-arrow{
     cursor: pointer;
 }
+
+.details a {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.table {
+    color: var(--text-color);
+    text-align: justify;
+    border-bottom: 1px solid #ddd;
+    overflow-x: auto;
+}
+
+.table tr:hover {
+    font-weight: bold;
+}
+
+.table tr:nth-child(even) {background-color: #292929;}

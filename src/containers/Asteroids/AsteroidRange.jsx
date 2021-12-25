@@ -14,15 +14,15 @@ export default function AsteroidRange(props) {
     return (
         <div>
           <div className="header">
-              <div className="left-arrow" onClick={() => {
+              <div className="left-arrow" title='Previous Data' onClick={() => {
               if(current === 0) {
                     setcurrent(asteroidData.length - 1)
             } else {
                     setcurrent(current - 1)
                 }
               }}> ◀️ </div>
-              <div className="date"> {asteroidData[current].date}</div>
-              <div className="right-arrow" onClick={() => {
+              <div className="date"> {asteroidData[current].date} ({asteroidData[current].list.length} near earth objects found)</div>
+              <div className="right-arrow" title='Next Data' onClick={() => {
                   if(current === asteroidData.length - 1) {
                       setcurrent(0);
                   } else {
