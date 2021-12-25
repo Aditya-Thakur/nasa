@@ -5,6 +5,7 @@ export default function AsteroidDetails(props) {
     const [asteroidData, setasteroidData] = useState({});
     const [showDetails, setshowDetails] = useState(false)
     useEffect(() => {
+        setshowDetails(false);
         lookup(props.astId).then(res => {
             setasteroidData(res);
             setshowDetails(true);

@@ -20,18 +20,18 @@
 }
 
 .asterCard:hover {
-    transform: translateY(-35px);
-    height: 280px;
-    transition: 2s;
+    transform: translateY(-15px);
+    height: auto;
+    transition: 3s;
 }
 
 .asterCard:hover .bottom {
     z-index: 100;
     opacity: 1;
-    transition: 2s;
+    transition: 3s;
 }
-z
-.asterCard:hover .top {
+
+z .asterCard:hover .top {
     display: block;
 }
 
@@ -46,17 +46,19 @@ z
 
 .grid-container {
     display: grid;
-    grid: 300px / auto auto auto;
+    grid-gap: 10px;
+    grid-template-columns: repeat(auto-fill, 320px);
 }
-
 
 .header {
     display: flex;
+    flex-wrap: wrap;
     padding: 20px;
     justify-content: space-between;
 }
 
-.header .left-arrow, .header .right-arrow{
+.header .left-arrow,
+.header .right-arrow {
     cursor: pointer;
 }
 
@@ -76,4 +78,6 @@ z
     font-weight: bold;
 }
 
-.table tr:nth-child(even) {background-color: #292929;}
+.table tr:nth-child(even) {
+    background-color: #292929;
+}
