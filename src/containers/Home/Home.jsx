@@ -6,7 +6,7 @@ import AsteroidRange from '../Asteroids/AsteroidRange';
 import DatePicker from '../DatePicker/DatePicker';
 import CloseButton from '../shared/Buttons/CloseButton';
 import './home.css';
-import earthImage from '../../assets/images/earth.png';
+import earthImage from '../../assets/images/earth.webp';
 import Loader from '../shared/Loader/Loader';
 
 function Home() {
