@@ -10,7 +10,7 @@ export default function AsteroidRange(props) {
             list: obj[key]
         }));
     }
-    let asteroidData = convert(props.asteroidRange);
+    let asteroidData = (convert(props.asteroidRange)).sort( (a,b) => Date.parse(a.date) - Date.parse(b.date));
     return (
         <div>
           <div className="header">

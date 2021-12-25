@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { browse } from '../../services/info.service';
+import { browse, feed } from '../../services/info.service';
 import AsteroidDetails from '../Asteroids/AsteroidDetails';
 import AsteroidList from '../Asteroids/AsteroidList';
 import AsteroidRange from '../Asteroids/AsteroidRange';
@@ -7,6 +7,7 @@ import DatePicker from '../DatePicker/DatePicker';
 import CloseButton from '../shared/Buttons/CloseButton';
 import './home.css';
 import earthImage from '../../assets/images/earth.png';
+import Loader from '../shared/Loader/Loader';
 
 function Home() {
     const [showAsteroids, setShowAsteroids] = useState(false);
@@ -25,9 +26,19 @@ function Home() {
         })
     }, [showAsteroidRange]);
 
-    const toAsteroidView = (astList) => {
-        setasteroidRange(astList);
-        setshowAsteroidRange(true);
+    const dateRetriever = (dateRange) => {
+        setshowAsteroidRange(false);
+        setShowAsteroids(false);
+        feed(dateRange).then(
+            res => {
+                setasteroidRange(res.near_earth_objects);
+                setShowAsteroids(true);
+                setshowAsteroidRange(true);
+            }
+        ).catch( err => {
+            console.log(err);
+        })
+      
     }
 
     const showDetails = (id) => {
@@ -42,7 +53,7 @@ function Home() {
             </div>
             <div className="center">
                 {
-                    !showAsteroids ? (<div>Loading...</div>) : (
+                    !showAsteroids ? (<Loader />) : (
                         <>
                             {showAsteroidRange ? (<div onClick={() => {
                                 setshowAsteroidRange(false);
@@ -66,7 +77,7 @@ function Home() {
                 {
                     showDetailsPane ? (<AsteroidDetails astId={astId} />) : (<></>)
                 }
-                <DatePicker toAsteroidView={toAsteroidView} />
+                <DatePicker dateRetriever={dateRetriever} />
 
             </div>
         </div>

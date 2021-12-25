@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { lookup } from '../../services/info.service';
+import Loader from '../shared/Loader/Loader';
 
 export default function AsteroidDetails(props) {
     const [asteroidData, setasteroidData] = useState({});
@@ -99,9 +100,7 @@ export default function AsteroidDetails(props) {
                         </table>
                     </div>
                 ) :
-                (
-                    <p>Loading...</p>
-                )}
+                (<Loader />)}
         </div>
     )
 }
