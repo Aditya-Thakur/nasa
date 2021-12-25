@@ -1,13 +1,23 @@
-# Getting Started with Create React App
+# NEO-WS
+## _NeoWs (Near-Earth Object Web Service)_
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://nasa-kappa.vercel.app/)
+## Check the [live demo here](https://nasa-kappa.vercel.app/).
 
-## Available Scripts
+NeoWs (Near-Earth Object Web Service) is a set of RESTful web service APIs for near-earth Asteroid information. With these APIs, a user can browse the NASA JPL dataset, look up a specific Asteroid with its NASA JPL small body id and search for Asteroids based on their closest approach date to Earth.
+### Data-set: 
+All the data is from the NASA JPL Asteroid [website](http://neo.jpl.nasa.gov/).
 
-In the project directory, you can run:
+## Features
+- 10 important asteroids data is shown on landing page.
+- On hover of each asteroid their details are revealed.
+- On click of each asteroid there details are shown in a tabular format in right pane.
+- There's an option present in right pane to search near earth objects by choice of date range.
 
-### `yarn start`
+## Build & Deployement
+Please find the basic react guide for building the project [here](https://github.com/Aditya-Thakur/nasa/blob/master/HowToRun.md)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Suggestions
+Any suggestion or improvements are welcome. Get in touch at adityathakur532@gmail.com
+
 
