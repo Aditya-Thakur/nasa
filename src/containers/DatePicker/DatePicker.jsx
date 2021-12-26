@@ -17,7 +17,7 @@ export default function DatePicker({dateRetriever}) {
             if(endDate) {
                 const diffTime = Date.parse(endDate) - Date.parse(startDate);
                 const dateDiff = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-                if (dateDiff < 7) {
+                if (dateDiff <= 7 && dateDiff >= 0) {
                     dateRetriever({startDate, endDate});
                 } else {
                     showErrorMessage("Date range must be 7 days or less");
@@ -57,7 +57,7 @@ export default function DatePicker({dateRetriever}) {
                         handleValidation();                       
                     }
                     }>Search</button>
-                    {showerrMsg ? (<p>{errorMsg}</p>) : (<></>)}
+                    {showerrMsg ? (<p className='errorMsg'>{errorMsg}</p>) : (<></>)}
             </div>
         </div>
     )
