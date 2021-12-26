@@ -62,6 +62,10 @@ z .asterCard:hover .top {
     cursor: pointer;
 }
 
+.details {
+    padding: 20px;
+}
+
 .details a {
     text-decoration: underline;
     cursor: pointer;
@@ -72,6 +76,7 @@ z .asterCard:hover .top {
     text-align: justify;
     border-bottom: 1px solid #ddd;
     overflow-x: auto;
+    padding: 4px 8px;
 }
 
 .table tr:hover {
