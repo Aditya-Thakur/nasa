@@ -41,7 +41,6 @@ function Home() {
     }
 
     const showDetails = (id) => {
-        console.log(id);
         setastId(id);
         setshowDetailsPane(true);
     }

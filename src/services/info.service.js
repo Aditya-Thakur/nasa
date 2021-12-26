@@ -8,7 +8,6 @@ export async function browse() {
     return res.data;
 }
 export async function feed(dateRange) {
-    console.log(dateRange);
     const res = await axios.get(properties.urls.feed, {params: {
         start_date: dateRange.startDate,
         end_date: dateRange.endDate,
