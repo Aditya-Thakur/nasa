@@ -4,10 +4,6 @@ export default function DatePicker({dateRetriever}) {
 
     const [startDate, setstartDate] = useState(false);
     const [endDate, setendDate] = useState(false)
-    // let dateRange = {
-    //     startDate: null,
-    //     endDate: null
-    // }
 
     const [errorMsg, seterrorMsg] = useState('');
     const [showerrMsg, setshowerrMsg] = useState(false);
@@ -43,14 +39,14 @@ export default function DatePicker({dateRetriever}) {
             </div>
             <div className="card-body">
                 <p>Start Date:</p>
-                <input type="date" name="Start_Date" id="" onChange={ event => {
+                <input type="date" name="Start_Date" selected={startDate} data-testid="startDate" onChange={ event => {
                     setstartDate(event.target.value);
                 }}  />
                 <p>End Date:</p>
-                <input type="date" name="End_Date" id="" onChange={ event => {
+                <input type="date" name="End_Date" selected={endDate} data-testid="endDate" onChange={ event => {
                     setendDate(event.target.value);
                 }}  />
-                <button onClick={
+                <button data-testid="searchButton" onClick={
                     event => {
                         event.preventDefault();
                         setshowerrMsg(false);
