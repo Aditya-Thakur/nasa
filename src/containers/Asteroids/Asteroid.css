@@ -79,10 +79,6 @@ z .asterCard:hover .top {
     padding: 4px 8px;
 }
 
-.table tr:hover {
-    font-weight: bold;
-}
-
 .table tr:nth-child(even) {
     background-color: #292929;
 }
